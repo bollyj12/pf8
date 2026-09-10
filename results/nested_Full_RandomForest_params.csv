@@ -1,6 +1,0 @@
-Set,Model,Fold,Inner_best_AUC,Best_params
-Full,RandomForest,1,0.9306442944896104,"{""max_depth"": null, ""max_features"": ""sqrt"", ""min_samples_leaf"": 2, ""n_estimators"": 100}"
-Full,RandomForest,2,0.9064902296149556,"{""max_depth"": 12, ""max_features"": ""sqrt"", ""min_samples_leaf"": 2, ""n_estimators"": 100}"
-Full,RandomForest,3,0.9274560873956386,"{""max_depth"": null, ""max_features"": 0.5, ""min_samples_leaf"": 2, ""n_estimators"": 100}"
-Full,RandomForest,4,0.9378496159359048,"{""max_depth"": null, ""max_features"": ""sqrt"", ""min_samples_leaf"": 2, ""n_estimators"": 100}"
-Full,RandomForest,5,0.9635283260566008,"{""max_depth"": 12, ""max_features"": ""sqrt"", ""min_samples_leaf"": 2, ""n_estimators"": 100}"

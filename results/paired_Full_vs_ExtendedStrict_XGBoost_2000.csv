@@ -1,2 +1,0 @@
-Comparison,AUC_difference,CI_low,CI_high,bootstrap_p
-Full XGBoost vs Extended Strict XGBoost,0.0022490452,-0.01128168,0.02040056,0.657
