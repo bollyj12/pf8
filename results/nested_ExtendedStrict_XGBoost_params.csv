@@ -1,0 +1,6 @@
+Set,Model,Fold,Inner_best_AUC,Best_params
+ExtendedStrict,XGBoost,1,0.9031411088717464,"{""colsample_bytree"": 0.85, ""learning_rate"": 0.05, ""max_depth"": 3, ""min_child_weight"": 1, ""n_estimators"": 150, ""reg_alpha"": 0, ""reg_lambda"": 1, ""subsample"": 0.85}"
+ExtendedStrict,XGBoost,2,0.8999951190687212,"{""colsample_bytree"": 0.85, ""learning_rate"": 0.1, ""max_depth"": 3, ""min_child_weight"": 3, ""n_estimators"": 150, ""reg_alpha"": 0.1, ""reg_lambda"": 3, ""subsample"": 0.7}"
+ExtendedStrict,XGBoost,3,0.9344621815604008,"{""colsample_bytree"": 0.85, ""learning_rate"": 0.05, ""max_depth"": 4, ""min_child_weight"": 1, ""n_estimators"": 150, ""reg_alpha"": 0, ""reg_lambda"": 1, ""subsample"": 0.85}"
+ExtendedStrict,XGBoost,4,0.9277546167040546,"{""colsample_bytree"": 0.85, ""learning_rate"": 0.05, ""max_depth"": 4, ""min_child_weight"": 1, ""n_estimators"": 150, ""reg_alpha"": 0, ""reg_lambda"": 1, ""subsample"": 0.85}"
+ExtendedStrict,XGBoost,5,0.9504820255918108,"{""colsample_bytree"": 0.85, ""learning_rate"": 0.05, ""max_depth"": 4, ""min_child_weight"": 1, ""n_estimators"": 150, ""reg_alpha"": 0, ""reg_lambda"": 1, ""subsample"": 0.85}"

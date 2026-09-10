@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+"""Repo entry script for the Pf8 reproduction workflow.
+
+This script downloads the raw Pf8 tables, reconstructs the analytical cohort,
+preprocesses the data, runs the modeling workflow, and generates the figures in one reproducible command.
+"""
+from __future__ import annotations
+
+import os
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+
+
+def run(cmd: list[str], *, cwd: Path | None = None) -> None:
+    print(f"\n>>> {' '.join(map(str, cmd))}", flush=True)
+    subprocess.run(cmd, cwd=str(cwd or ROOT), check=True)
+
+
+def find_python() -> str:
+    venv_python = ROOT / ".venv" / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
+    if venv_python.exists():
+        return str(venv_python)
+    return sys.executable
+
+
+def ensure_environment() -> str:
+    py = find_python()
+    req = ROOT / "requirements.txt"
+    if req.exists():
+        subprocess.run([py, "-m", "pip", "install", "-r", str(req)], cwd=str(ROOT), check=False)
+    return py
+
+
+def main() -> None:
+    py = ensure_environment()
+
+    run([py, "scripts/download_raw_pf8.py"])
+    run([py, "scripts/filter_raw_pf8.py"])
+    run([py, "pf8_data_loader.py"])
+    run([py, "scripts/preprocessing.py", "--data", "data/derived/pf8_sea_artemisinin_clean.tsv", "--set", "Full"])
+
+    jobs = [
+        [py, "scripts/nested_study_grouped_cv.py", "--data", "data/derived/pf8_sea_artemisinin_clean.tsv", "--set", "Full", "--model", "ElasticNet", "--outdir", "results/nested_cv"],
+        [py, "scripts/nested_study_grouped_cv.py", "--data", "data/derived/pf8_sea_artemisinin_clean.tsv", "--set", "Full", "--model", "RandomForest", "--outdir", "results/nested_cv"],
+        [py, "scripts/nested_study_grouped_cv.py", "--data", "data/derived/pf8_sea_artemisinin_clean.tsv", "--set", "Full", "--model", "XGBoost", "--outdir", "results/nested_cv"],
+        [py, "scripts/nested_study_grouped_cv.py", "--data", "data/derived/pf8_sea_artemisinin_clean.tsv", "--set", "Strict", "--model", "XGBoost", "--outdir", "results/nested_cv"],
+        [py, "scripts/nested_study_grouped_cv.py", "--data", "data/derived/pf8_sea_artemisinin_clean.tsv", "--set", "ExtendedStrict", "--model", "XGBoost", "--outdir", "results/nested_cv"],
+        [py, "scripts/loco.py", "--data", "data/derived/pf8_sea_artemisinin_clean.tsv", "--set", "Full", "--outdir", "results/loco"],
+        [py, "scripts/loco.py", "--data", "data/derived/pf8_sea_artemisinin_clean.tsv", "--set", "ExtendedStrict", "--outdir", "results/loco"],
+        [py, "scripts/shap_analysis.py", "--data", "data/derived/pf8_sea_artemisinin_clean.tsv", "--model", "RF", "--outdir", "results/shap"],
+        [py, "scripts/shap_analysis.py", "--data", "data/derived/pf8_sea_artemisinin_clean.tsv", "--model", "XGBoost", "--outdir", "results/shap"],
+    ]
+
+    for job in jobs:
+        run(job)
+
+    run([py, "scripts/figures/generate_all_figures.py"])
+
+    print("\nREPRODUCTION PIPELINE COMPLETE.")
+
+
+if __name__ == "__main__":
+    main()

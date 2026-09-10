@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Pf8: Inspect data",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/pf8_data_loader.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Pf8: Full pipeline",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_all.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Pf8: Quick pipeline",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_all.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--skip-download",
+        "--skip-filter",
+        "--quick"
+      ]
+    }
+  ]
+}

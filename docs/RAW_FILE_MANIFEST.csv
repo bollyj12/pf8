@@ -1,0 +1,5 @@
+filename,source,md5,status_in_zip
+Pf8_samples.txt,https://zenodo.org/records/18681980/files/Pf8_samples.txt?download=1,c5832d7207a9ff2377f3d5c67e1c4582,bundled
+Pf8_fws.tsv,https://zenodo.org/records/18681980/files/Pf8_fws.tsv?download=1,50d555a152924d5e8b2f35087a50893c,download_with_script
+Pf8_drug_resistance_marker_genotypes.tsv,https://zenodo.org/records/18681980/files/Pf8_drug_resistance_marker_genotypes.tsv?download=1,c3de1d3d5b021af9e6d5a497e68dd47a,download_with_script
+Pf8_inferred_resistance_status_classification.tsv,https://zenodo.org/records/18681980/files/Pf8_inferred_resistance_status_classification.tsv?download=1,4a6062d66bc4472a7006b87dbe4763ca,download_with_script

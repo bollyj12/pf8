@@ -1,0 +1,6 @@
+Set,Model,Fold,Inner_best_AUC,Best_params
+Full,ElasticNet,1,0.9261974194812385,"{""C"": 1, ""l1_ratio"": 0.5}"
+Full,ElasticNet,2,0.9112120940815563,"{""C"": 0.1, ""l1_ratio"": 0.25}"
+Full,ElasticNet,3,0.9337080177406903,"{""C"": 0.1, ""l1_ratio"": 0.25}"
+Full,ElasticNet,4,0.9353215126753853,"{""C"": 0.1, ""l1_ratio"": 0.25}"
+Full,ElasticNet,5,0.9643608004083738,"{""C"": 0.1, ""l1_ratio"": 0.25}"

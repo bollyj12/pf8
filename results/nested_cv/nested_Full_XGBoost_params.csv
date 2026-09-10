@@ -1,0 +1,6 @@
+Set,Model,Fold,Inner_best_AUC,Best_params
+Full,XGBoost,1,0.924537253727704,"{""colsample_bytree"": 0.85, ""learning_rate"": 0.05, ""max_depth"": 3, ""min_child_weight"": 1, ""n_estimators"": 150, ""reg_alpha"": 0, ""reg_lambda"": 1, ""subsample"": 0.85}"
+Full,XGBoost,2,0.9076390221018017,"{""colsample_bytree"": 0.85, ""learning_rate"": 0.1, ""max_depth"": 3, ""min_child_weight"": 3, ""n_estimators"": 150, ""reg_alpha"": 0.1, ""reg_lambda"": 3, ""subsample"": 0.7}"
+Full,XGBoost,3,0.9375720357201381,"{""colsample_bytree"": 0.85, ""learning_rate"": 0.05, ""max_depth"": 4, ""min_child_weight"": 1, ""n_estimators"": 150, ""reg_alpha"": 0, ""reg_lambda"": 1, ""subsample"": 0.85}"
+Full,XGBoost,4,0.9371036489995931,"{""colsample_bytree"": 0.85, ""learning_rate"": 0.05, ""max_depth"": 4, ""min_child_weight"": 1, ""n_estimators"": 150, ""reg_alpha"": 0, ""reg_lambda"": 1, ""subsample"": 0.85}"
+Full,XGBoost,5,0.9630708660190423,"{""colsample_bytree"": 0.85, ""learning_rate"": 0.05, ""max_depth"": 3, ""min_child_weight"": 1, ""n_estimators"": 150, ""reg_alpha"": 0, ""reg_lambda"": 1, ""subsample"": 0.85}"

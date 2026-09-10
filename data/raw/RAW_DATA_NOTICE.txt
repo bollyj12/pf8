@@ -1,0 +1,18 @@
+Pf8 raw source data
+
+Bundled here:
+- Pf8_samples.txt
+
+Automatically downloaded by `python scripts/download_raw_pf8.py`:
+- Pf8_fws.tsv
+- Pf8_drug_resistance_marker_genotypes.tsv
+- Pf8_inferred_resistance_status_classification.tsv
+
+Official source: https://zenodo.org/records/18681980
+DOI: 10.5281/zenodo.18681980
+License: CC BY 4.0
+
+The execution environment used to build this ZIP could not reliably transfer the
+other Zenodo raw files because Zenodo returned HTTP 429/rate-limit responses.
+The downloader is included with official filenames and published MD5 hashes, so
+running it locally retrieves the exact raw source files and verifies integrity.
